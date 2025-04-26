@@ -1,0 +1,5 @@
+# IDE-related
+.idea
+
+# Project-related
+node_modules
