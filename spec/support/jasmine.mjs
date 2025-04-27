@@ -1,7 +1,7 @@
 export default {
   spec_dir: "build",
   spec_files: [
-    "tests/**/*[sS]pec.?(m)js"
+    "server/tests/**/*[sS]pec.?(m)js"
   ],
   helpers: [
     "helpers/**/*.?(m)js"

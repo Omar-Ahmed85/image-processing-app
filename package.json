@@ -8,7 +8,8 @@
 		"build": "npx tsc",
 		"jasmine": "jasmine",
 		"test": "npm run build && npm run jasmine",
-		"watch": "nodemon src/",
+		"watch-js": "nodemon build/server/server.ts",
+		"watch-ts": "nodemon src/server/server.ts",
 		"format": "npx prettier . --write",
 		"lint": "npx eslint ."
 	},
@@ -16,18 +17,23 @@
 	"author": "Mostafa Ahmed Mostafa",
 	"license": "ISC",
 	"dependencies": {
-		"express": "^5.1.0"
+		"express": "^5.1.0",
+		"multer": "^1.4.5-lts.2",
+		"sharp": "^0.34.1"
 	},
 	"devDependencies": {
 		"@types/express": "^5.0.1",
 		"@types/jasmine": "^5.1.7",
+		"@types/multer": "^1.4.12",
 		"@types/node": "^22.15.2",
+		"@types/sharp": "^0.31.1",
 		"@types/supertest": "^6.0.3",
 		"eslint": "^9.25.1",
 		"jasmine": "^5.6.0",
 		"nodemon": "^3.1.10",
 		"prettier": "^3.5.3",
 		"supertest": "^7.1.0",
+		"ts-node": "^10.9.2",
 		"typescript": "^5.8.3"
 	}
 }
