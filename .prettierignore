@@ -1,5 +1,7 @@
 # Project-related
 node_modules
+uploads
+processed
 
 # IDE-related
 .idea
