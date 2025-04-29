@@ -19,7 +19,8 @@ export const upload = multer({ storage, fileFilter });
 export function imageUploader(req, res, next) {
     if (!req.file) {
         res.status(400).json({
-            message: 'No Image Uploaded or Invalid File Type. Only .jpg Files are Allowed'
+            message: 'No Image Uploaded or Invalid File Type. Only .jpg Files are Allowed',
+            type: 'Error',
         });
         return;
     }

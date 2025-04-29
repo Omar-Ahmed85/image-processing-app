@@ -13,7 +13,11 @@ const storage = multer.diskStorage({
 	},
 });
 
-const fileFilter = (req: express.Request, file: Express.Multer.File, cb: multer.FileFilterCallback) => {
+const fileFilter = (
+	req: express.Request,
+	file: Express.Multer.File,
+	cb: multer.FileFilterCallback,
+) => {
 	if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/jpg') {
 		cb(null, true);
 	} else {
@@ -30,7 +34,9 @@ export function imageUploader(
 ) {
 	if (!req.file) {
 		res.status(400).json({
-			message: 'No Image Uploaded or Invalid File Type. Only .jpg Files are Allowed'
+			message:
+				'No Image Uploaded or Invalid File Type. Only .jpg Files are Allowed',
+			type: 'Error',
 		});
 		return;
 	}
