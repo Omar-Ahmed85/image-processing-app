@@ -1,0 +1,32 @@
+/* Inter */
+
+@font-face {
+	src: url('../fonts/inter.ttf') format('truetype');
+	font-family: 'Inter';
+}
+
+/* Product Sans (Google Sans) */
+
+@font-face {
+	src: url('../fonts/productSans.ttf') format('truetype');
+	font-family: 'Google Sans';
+}
+
+/* Space Mono */
+
+@font-face {
+	src: url('../fonts/spaceMono.ttf') format('truetype');
+	font-family: 'Space Mono';
+}
+
+@font-face {
+	src: url('../fonts/spaceMonoItalic.ttf') format('truetype');
+	font-family: 'Space Mono Italic';
+}
+
+/* Urbanist */
+
+@font-face {
+	src: url('../fonts/urbanist.ttf') format('truetype');
+	font-family: 'Urbanist';
+}

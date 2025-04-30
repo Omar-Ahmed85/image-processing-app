@@ -9,7 +9,8 @@ const router = express.Router();
 router.post('/', upload.single('image'), imageUploader, (req, res) => {
 	res.status(200).json({
 		message: 'Image Uploaded Successfully',
-		type: 'Success',
+		type: 'check_circle',
+		imgName: req.file?.filename,
 	});
 });
 

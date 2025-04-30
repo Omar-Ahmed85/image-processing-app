@@ -11,16 +11,17 @@ export default async function imageResizer(req: Request, res: Response) {
 		res.status(400).json({
 			message:
 				'Invalid Input. You should select an image, set a width and a height.',
-			type: 'Error',
+			type: 'error',
 		});
 		return;
 	}
 
 	const checkUploads = await checkUploadExistence(filename);
+
 	if (!checkUploads) {
 		res.status(400).json({
 			message: 'Image Not Found. Please Upload It First',
-			type: 'Error',
+			type: 'error',
 		});
 		return;
 	}
@@ -31,7 +32,7 @@ export default async function imageResizer(req: Request, res: Response) {
 	if (checkProcessed) {
 		res.status(200).json({
 			message: 'Image Already Exists',
-			type: 'Success',
+			type: 'check_circle',
 			imageUrl,
 		});
 	} else {
@@ -41,7 +42,7 @@ export default async function imageResizer(req: Request, res: Response) {
 
 		res.status(200).json({
 			message: 'Image Resized Successfully',
-			type: 'Success',
+			type: 'check_circle',
 			imageUrl,
 		});
 	}

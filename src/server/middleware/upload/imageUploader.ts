@@ -36,7 +36,7 @@ export function imageUploader(
 		res.status(400).json({
 			message:
 				'No Image Uploaded or Invalid File Type. Only .jpg Files are Allowed',
-			type: 'Error',
+			type: 'error',
 		});
 		return;
 	}

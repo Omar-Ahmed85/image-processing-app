@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="description" content="Image Processing App" />
+		<meta name="author" content="Mostafa Ahmed Mostafa" />
+		<title>Image Processing App</title>
+		<link rel="stylesheet" href="./assets/css/main.css" />
+		<link rel="icon" href="./assets/images/logo.png" />
+	</head>
+	<body>
+		<div id="darkness"></div>
+
+		<div class="notification">
+			<div class="message"></div>
+			<div class="timer"></div>
+		</div>
+
+		<div id="preview">
+			<span
+				id="close-button"
+				style="font-size: 2rem"
+				class="material-symbols-rounded"
+				>close</span
+			>
+		</div>
+
+		<header>
+			<a href="/" class="logo">
+				<img src="./assets/images/logo.png" alt="Website Logo" />
+			</a>
+		</header>
+
+		<div class="wrapper">
+			<div class="main-content">
+				<h1 class="heading">Image Processing App</h1>
+
+				<div class="upload-container">
+					<span
+						><span class="material-symbols-rounded"
+							>add_photo_alternate</span
+						>Upload Image</span
+					>
+					<input type="file" name="image" id="image-input" required />
+				</div>
+
+				<form id="resize-form" enctype="multipart/form-data">
+					<div class="inputs">
+						<input
+							type="number"
+							name="width"
+							id="width-input"
+							placeholder="Width"
+							required
+						/>
+						<input
+							type="number"
+							name="height"
+							id="height-input"
+							placeholder="Height"
+							required
+						/>
+					</div>
+
+					<button type="submit" id="resize-button">RESIZE</button>
+				</form>
+
+				<h2>
+					Choose from these images
+					<span class="material-symbols-rounded">info</span>
+				</h2>
+				<div
+					id="images-container"
+					title="Double Click on Any Image To Open Preview"
+				></div>
+			</div>
+		</div>
+
+		<script src="./assets/javascript/main.js" type="module"></script>
+	</body>
+</html>
