@@ -1,6 +1,5 @@
 import supertest from 'supertest';
-
-const app = 'http://localhost:3000';
+import app from '../../server.js';
 
 describe('POST /api/upload', () => {
 	it('Uploads an image to the "/uploads" folder', async () => {

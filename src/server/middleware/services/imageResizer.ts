@@ -36,15 +36,23 @@ export default async function imageResizer(req: Request, res: Response) {
 			imageUrl,
 		});
 	} else {
-		await sharp(`uploads/${filename}`)
-			.resize(+width, +height)
-			.toFile(`processed/${filename} __ ${width}x${height}.jpg`);
+		try {
+			await sharp(`uploads/${filename}`)
+				.resize(+width, +height)
+				.toFile(`processed/${filename} __ ${width}x${height}.jpg`);
 
-		res.status(200).json({
-			message: 'Image Resized Successfully',
-			type: 'check_circle',
-			imageUrl,
-		});
+			res.status(200).json({
+				message: 'Image Resized Successfully',
+				type: 'check_circle',
+				imageUrl,
+			});
+		} catch (error: unknown) {
+			res.status(500).json({
+				message: 'Failed To Resize The Image',
+				type: 'error',
+				error: error,
+			});
+		}
 	}
 }
 
@@ -68,5 +76,24 @@ async function checkUploadExistence(filename: string): Promise<boolean> {
 		return true;
 	} catch (error) {
 		return false;
+	}
+}
+
+// Function For Testing
+
+export async function transform(
+	inputPath: string,
+	width: number,
+	height: number,
+	outputPath: string,
+) {
+	try {
+		const image = await sharp(inputPath)
+			.resize(width, height)
+			.toFile(`${outputPath}`);
+
+		return image;
+	} catch (error) {
+		throw new Error(error as string);
 	}
 }

@@ -1,6 +1,5 @@
 import supertest from 'supertest';
-
-const app = 'http://localhost:3000';
+import app from '../../server.js';
 
 describe('POST /api/resize', () => {
 	it('Resizes an image to a specific width and height', async () => {
