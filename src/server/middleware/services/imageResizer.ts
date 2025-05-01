@@ -19,7 +19,7 @@ export default async function imageResizer(req: Request, res: Response) {
 	const checkUploads = await checkUploadExistence(filename);
 
 	if (!checkUploads) {
-		res.status(400).json({
+		res.status(404).json({
 			message: 'Image Not Found. Please Upload It First',
 			type: 'error',
 		});
