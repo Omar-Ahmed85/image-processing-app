@@ -59,7 +59,9 @@ imageInput.addEventListener('change', async () => {
 
 		const data = await response.json();
 		showNotification(data.message, data.type);
-		addNewImage(data.imgName);
+		if (response.status === 200 && data.type === 'check_circle') {
+			addNewImage(data.imgName);
+		}
 	} catch (error) {
 		console.error(error);
 		showNotification('Failed to Upload The Image', 'error');
@@ -105,7 +107,9 @@ resizeForm.addEventListener('submit', async (e) => {
 		const data = await response.json();
 
 		showNotification(data.message, data.type);
-		openPreview(data.imageUrl);
+		if (response.status === 200 && data.type === 'check_circle') {
+			openPreview(data.imageUrl);
+		}
 	} catch (error) {
 		console.error(error);
 		showNotification('Failed To Resize The Image', 'error');

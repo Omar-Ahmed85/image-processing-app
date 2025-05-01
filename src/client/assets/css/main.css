@@ -307,6 +307,7 @@
 
 	#preview {
 		display: none;
+		justify-content: space-between;
 		align-items: center;
 		flex-direction: column;
 		position: fixed;
