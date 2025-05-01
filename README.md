@@ -81,6 +81,8 @@ npm start
 
 ### 4. Access the Application
 
+- Open your browser and access this URL:
+
 ```
 http://localhost:3000/
 ```

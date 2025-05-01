@@ -1,4 +1,6 @@
 import express from 'express';
+// @ts-ignore
+import cors from 'cors';
 import mainRoute from './routes/main.js';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -7,6 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const app = express();
 const port = 3000;
+app.use(cors());
 app.use('/api', mainRoute);
 app.use('/processed', express.static('processed'));
 app.use('/uploads', express.static('uploads'));

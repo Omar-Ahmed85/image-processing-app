@@ -367,6 +367,7 @@
 		font-family: 'Space Mono Italic', monospace;
 		border: 1px solid #000;
 		text-overflow: ellipsis;
+		border-radius: 10px;
 
 		& > #copy {
 			cursor: pointer;
