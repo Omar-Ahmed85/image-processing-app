@@ -1,0 +1,4 @@
+name = "image-processing-app"
+main = "build/server/server.js"
+compatibility_date = "2025-06-13"
+type = "module"
