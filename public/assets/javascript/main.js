@@ -11,7 +11,7 @@ async function addMainImages() {
 		img.setAttribute('data-name', image);
 		img.src = `/uploads/${image}`;
 		img.classList.add('image');
-		img.setAttribute('data-url', `http://localhost:3000/uploads/${image}`);
+		img.setAttribute('data-url', `https://image-processing-app-production.up.railway.app/uploads/${image}`);
 
 		imagesContainer.appendChild(img);
 	});
@@ -33,7 +33,7 @@ function addNewImage(name) {
 	img.setAttribute('data-name', name);
 	img.classList.add('image');
 	img.src = `/uploads/${name}`;
-	img.setAttribute('data-url', `http://localhost:3000/uploads/${name}`);
+	img.setAttribute('data-url', `https://image-processing-app-production.up.railway.app/uploads/${name}`);
 
 	imagesContainer.appendChild(img);
 }
@@ -130,7 +130,7 @@ function openPreview(imageUrl) {
 
 	div.classList.add('link');
 	div.innerHTML = `
-		<span>http://localhost:3000/${imageUrl}</span>
+		<span>https://image-processing-app-production.up.railway.app/${imageUrl}</span>
 		<span id="copy" class="material-symbols-rounded">content_copy</span>
 	`;
 	preview.appendChild(div);
@@ -141,7 +141,7 @@ function openPreview(imageUrl) {
 	const copy = document.getElementById('copy');
 	copy.addEventListener('click', () => {
 		navigator.clipboard
-			.writeText(`http://localhost:3000/${imageUrl}`)
+			.writeText(`https://image-processing-app-production.up.railway.app/${imageUrl}`)
 			.then(() => {
 				showNotification('Copied To Clipboard', 'check_circle');
 			})
