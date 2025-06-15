@@ -13,9 +13,9 @@ app.use(cors());
 app.use('/api', mainRoute);
 app.use('/processed', express.static('processed'));
 app.use('/uploads', express.static('uploads'));
-app.use('/', express.static('src/client'));
+app.use('/', express.static('public'));
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '..', '/..', 'src/client/index.html'));
+    res.sendFile(path.join(__dirname, '..', '/..', 'public/index.html'));
 });
 app.listen(port, () => {
     console.log(`Server is running on: http://localhost:${port}`);
