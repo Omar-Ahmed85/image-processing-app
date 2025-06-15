@@ -4,5 +4,5 @@
     "cleanUrls": false,
     "installCommand": "npm install",
     "devCommand": "npm start",
-    "outputDirectory": "build"
+    "outputDirectory": "../../build"
 }
