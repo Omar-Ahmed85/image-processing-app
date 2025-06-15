@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "1.0.0",
 	"description": "An Image processing application for generating placeholder images and more...",
-	"main": "index.js",
+	"main": "build/server/server.js",
 	"scripts": {
 		"build": "npx tsc",
 		"jasmine": "jasmine",
