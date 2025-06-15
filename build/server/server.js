@@ -15,9 +15,9 @@ app.use('/processed', express.static('processed'));
 app.use('/uploads', express.static('uploads'));
 app.use('/', express.static('src/client'));
 app.get('/', (req, res) => {
-	res.sendFile(path.join(__dirname, '..', '/..', 'src/client/index.html'));
+    res.sendFile(path.join(__dirname, '..', '/..', 'src/client/index.html'));
 });
 app.listen(port, () => {
-	console.log(`Server is running on: http://localhost:${port}`);
+    console.log(`Server is running on: http://localhost:${port}`);
 });
 export default app;
